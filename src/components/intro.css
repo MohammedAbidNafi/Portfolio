@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
 body {
     display: flex;
     justify-content: center;
@@ -11,10 +13,41 @@ body {
     font-size: 24px;
     font-family: monospace;
     position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+  }
+
+  .typing{
+    text-align: center;
+  }
+
+  p{
+    font-family: 'Fira Sans', sans-serif;
+    font-size: 20px;
+    color: #1144B3;
+    text-align: center;
   }
   
   #cursor {
     animation: blink 0.7s infinite;
+  }
+
+  .connect{
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-icons{
+
+    text-align: center;
+    justify-content: center;
+
+  }
+
+  .icons{
+    margin: 10px;
   }
   
   @keyframes blink {
