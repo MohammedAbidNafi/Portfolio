@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:opsz@6..12&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:opsz@6..12&display=swap");
 
 body {
   display: flex;
@@ -11,7 +11,7 @@ body {
 }
 
 .greet {
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
   font-size: 40px;
   color: #ffffff;
   text-align: center;
@@ -33,6 +33,7 @@ body {
   text-align: center;
   color: white;
   font-size: 40px;
+  position: relative;
 }
 
 p {
@@ -56,14 +57,12 @@ p {
   border-radius: 20px;
 
   background-color: #2f3651;
-  
 }
 
 .social-icons {
   margin: 0 auto;
   text-align: center;
   justify-content: center;
-  
 }
 
 .icons {
@@ -72,19 +71,11 @@ p {
   height: 75px;
 }
 
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-
-.typing span{
+.typing span {
   position: relative;
 }
+
+
 
 .typing span::before {
   content: "";
@@ -96,25 +87,35 @@ p {
   background: #8ebbff;
   transform: translateY(-45%);
   animation: blink 0.7s infinite;
+  animation-name: blink;
 }
 .typing span.stop-blinking::before {
   animation: none;
 }
-@keyframes blink {
-  50% { opacity: 0 }
+
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .typing span::before {
+    height: 0px;
+    width: 2px;
+    position: absolute;
+    top: 50%;
+    right: -7px;
+    background: #8ebbff;
+    transform: translateY(-45%);
+    animation: blink 0.7s infinite;
+    animation-name: blink;
+  }
 }
 
 @media (max-width: 480px) {
-  .greet{
-    font-family: 'Nunito', sans-serif;
+  .greet {
+    font-family: "Nunito", sans-serif;
     font-size: 20px;
     color: #ffffff;
     margin-left: 20px;
     margin-right: 20px;
     text-align: center;
   }
-
-
 
   .typing-effect {
     font-size: 15px;
@@ -126,15 +127,14 @@ p {
     margin: 0 auto;
   }
 
-  .typing{
+  .typing {
     font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
   }
-  .icons{
+  .icons {
     margin: 5px;
     width: 50px;
     height: 50px;
   }
-  
 }
