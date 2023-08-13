@@ -2,55 +2,52 @@ import React, { useEffect, useRef } from "react";
 import "./intro.css";
 
 function Intro() {
-    
-const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
+  const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
 
-    useEffect(() => {
-        const dynamicText = dynamicTextRef.current;
-        const words = ["Swift Developer", "Frontend Engineer", "Android Developer", "Student", "CEO of MargsGlobal"];
-        // Variables to track the position and deletion status of the word
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typeEffect = () => {
-      
-          if(dynamicText){
-              const currentWord = words[wordIndex];
-              const currentChar = currentWord.substring(0, charIndex);
-              dynamicText.textContent = currentChar;
-              dynamicText.classList.add("stop-blinking");
-              if (!isDeleting && charIndex < currentWord.length) {
-                // If condition is true, type the next character
-                charIndex++;
-                setTimeout(typeEffect, 100);
-              } else if (isDeleting && charIndex > 0) {
-                // If condition is true, remove the previous character
-                charIndex--;
-                setTimeout(typeEffect, 100);
-              } else {
-                // If word is deleted then switch to the next word
-                isDeleting = !isDeleting;
-                dynamicText!.classList.remove("stop-blinking");
-                wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-                setTimeout(typeEffect, 1000);
-              }
-          }
-          
-        };
+  useEffect(() => {
+    const dynamicText = dynamicTextRef.current;
+    const words = [
+      "Swift Developer",
+      "Frontend Engineer",
+      "Android Developer",
+      "Student",
+      "CEO of MargsGlobal",
+    ];
+    // Variables to track the position and deletion status of the word
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typeEffect = () => {
+      if (dynamicText) {
+        const currentWord = words[wordIndex];
+        const currentChar = currentWord.substring(0, charIndex);
+        dynamicText.textContent = currentChar;
+        dynamicText.classList.add("stop-blinking");
+        if (!isDeleting && charIndex < currentWord.length) {
+          // If condition is true, type the next character
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else if (isDeleting && charIndex > 0) {
+          // If condition is true, remove the previous character
+          charIndex--;
+          setTimeout(typeEffect, 100);
+        } else {
+          // If word is deleted then switch to the next word
+          isDeleting = !isDeleting;
+          dynamicText!.classList.remove("stop-blinking");
+          wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+          setTimeout(typeEffect, 1000);
+        }
+      }
+    };
 
-        typeEffect();
-    },[]);
-  
+    typeEffect();
+  }, []);
 
-
-  
-
- 
   return (
     <>
       <h1 className="greet">Hola! This is Mohammed Abid Nafi aka Slime!</h1>
 
-        
       <h1 className="typing">
         I'm a <span ref={dynamicTextRef}></span>
       </h1>
@@ -66,6 +63,7 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
             <img
               src="https://img.icons8.com/color/75/000000/gmail.png"
               alt="Gmail"
+              className="icons"
             />
           </a>
           <a
@@ -77,6 +75,7 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
             <img
               src="https://img.icons8.com/?size=75&id=12599&format=png"
               alt="github"
+              className="icons"
             />
           </a>
 
@@ -89,6 +88,7 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
             <img
               src="https://img.icons8.com/?size=75&id=32323&format=png"
               alt="instagram"
+              className="icons"
             />
           </a>
 
@@ -101,6 +101,8 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
             <img
               src="https://img.icons8.com/color/75/000000/linkedin.png"
               alt="Linkedin"
+              className="icons"
+              
             />
           </a>
 
@@ -110,7 +112,11 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
             rel="noreferrer"
             className="icons"
           >
-            <img src="https://img.icons8.com/?size=75&id=16713&format=png" />
+            <img
+              src="https://img.icons8.com/?size=75&id=16713&format=png"
+              className="icons"
+              alt="Whatsapp"
+            />
           </a>
 
           <a
@@ -119,7 +125,11 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
             rel="noreferrer"
             className="icons"
           >
-            <img src="https://img.icons8.com/color/75/000000/stackoverflow.png" />
+            <img
+              src="https://img.icons8.com/color/75/000000/stackoverflow.png"
+              className="icons"
+              alt="StackOverflow"
+            />
           </a>
 
           <a
@@ -128,7 +138,11 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
             rel="noreferrer"
             className="icons"
           >
-            <img src="https://img.icons8.com/color/75/000000/reddit.png" />
+            <img
+              src="https://img.icons8.com/color/75/000000/reddit.png"
+              className="icons"
+              alt="Reddit"
+            />
           </a>
         </div>
       </div>
