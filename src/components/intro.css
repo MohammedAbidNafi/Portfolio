@@ -15,6 +15,8 @@ body {
   font-size: 40px;
   color: #ffffff;
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .typing-effect {
@@ -29,6 +31,8 @@ body {
 
 .typing {
   text-align: center;
+  color: white;
+  font-size: 40px;
 }
 
 p {
@@ -47,6 +51,8 @@ p {
   justify-content: center;
   padding: 10px;
   margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
   border-radius: 20px;
 
   background-color: #2f3651;
@@ -57,10 +63,13 @@ p {
   margin: 0 auto;
   text-align: center;
   justify-content: center;
+  
 }
 
 .icons {
   margin: 10px;
+  width: 75px;
+  height: 75px;
 }
 
 @keyframes blink {
@@ -73,15 +82,39 @@ p {
   }
 }
 
+.typing span{
+  position: relative;
+}
 
+.typing span::before {
+  content: "";
+  height: 30px;
+  width: 2px;
+  position: absolute;
+  top: 50%;
+  right: -8px;
+  background: #8ebbff;
+  transform: translateY(-45%);
+  animation: blink 0.7s infinite;
+}
+.typing span.stop-blinking::before {
+  animation: none;
+}
+@keyframes blink {
+  50% { opacity: 0 }
+}
 
 @media (max-width: 480px) {
   .greet{
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
     color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
     text-align: center;
   }
+
+
 
   .typing-effect {
     font-size: 15px;
@@ -91,6 +124,16 @@ p {
     justify-content: center;
     text-align: center;
     margin: 0 auto;
+  }
+
+  .typing{
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .icons{
+    width: 40px;
+    height: 40px;
   }
   
 }

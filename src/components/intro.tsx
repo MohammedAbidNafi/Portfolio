@@ -1,16 +1,59 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./intro.css";
 
 function Intro() {
+    
+const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
+
+    useEffect(() => {
+        const dynamicText = dynamicTextRef.current;
+        const words = ["Swift Developer", "Frontend Engineer", "Android Developer", "Student", "CEO of MargsGlobal"];
+        // Variables to track the position and deletion status of the word
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typeEffect = () => {
+      
+          if(dynamicText){
+              const currentWord = words[wordIndex];
+              const currentChar = currentWord.substring(0, charIndex);
+              dynamicText.textContent = currentChar;
+              dynamicText.classList.add("stop-blinking");
+              if (!isDeleting && charIndex < currentWord.length) {
+                // If condition is true, type the next character
+                charIndex++;
+                setTimeout(typeEffect, 200);
+              } else if (isDeleting && charIndex > 0) {
+                // If condition is true, remove the previous character
+                charIndex--;
+                setTimeout(typeEffect, 100);
+              } else {
+                // If word is deleted then switch to the next word
+                isDeleting = !isDeleting;
+                dynamicText!.classList.remove("stop-blinking");
+                wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+                setTimeout(typeEffect, 1200);
+              }
+          }
+          
+        };
+
+        typeEffect();
+    },[]);
+  
+
+
+  
+
+ 
   return (
     <>
+      <h1 className="greet">Hola! This is Mohammed Abid Nafi aka Slime!</h1>
 
-    <h1 className="greet">Hola! This is Mohammed Abid Nafi aka Slime!</h1>
-      <div className="typing-effect">
-        <a className = "typing">
-          <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&duration=2500&pause=500&color=ffffff&center=true&vCenter=true&width=435&lines=Swift+Developer;Frontend+Engineer;Android+Developer;Student;CEO+of+MargsGlobal" />
-        </a>
-      </div>
+        
+      <h1 className="typing">
+        I'm a <span ref={dynamicTextRef}></span>
+      </h1>
       <div className="connect">
         <p>Contact me!</p>
         <div className="social-icons">
