@@ -11,7 +11,7 @@ function Intro() {
       "Frontend Engineer",
       "Android Developer",
       "Student",
-      "CEO of MargsGlobal",
+      "CEO",
     ];
     // Variables to track the position and deletion status of the word
     let wordIndex = 0;
@@ -102,7 +102,7 @@ function Intro() {
               src="https://img.icons8.com/color/75/000000/linkedin.png"
               alt="Linkedin"
               className="icons"
-              
+
             />
           </a>
 
