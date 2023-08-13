@@ -4,13 +4,15 @@ import "./intro.css";
 function Intro() {
   return (
     <>
+
+    <h1 className="greet">Hola! This is Mohammed Abid Nafi aka Slime!</h1>
       <div className="typing-effect">
         <a className = "typing">
-          <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&duration=2500&pause=500&color=1144B3&center=true&vCenter=true&width=435&lines=Swift+Developer;Frontend+Engineer;Android+Developer;Student;CEO+of+MargsGlobal" />
+          <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=40&duration=2500&pause=500&color=ffffff&center=true&vCenter=true&width=435&lines=Swift+Developer;Frontend+Engineer;Android+Developer;Student;CEO+of+MargsGlobal" />
         </a>
       </div>
       <div className="connect">
-        <p>Contact me...</p>
+        <p>Contact me!</p>
         <div className="social-icons">
           <a
             href="mailto:abid.nafi04@gmail.com"

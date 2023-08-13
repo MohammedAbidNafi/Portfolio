@@ -1,61 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Nunito+Sans:opsz@6..12&display=swap');
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #23293d;
+}
+
+.greet {
+  font-family: 'Nunito', sans-serif;
+  font-size: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.typing-effect {
+  font-size: 24px;
+  font-family: monospace;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.typing {
+  text-align: center;
+}
+
+p {
+  font-family: "Fira Sans", sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+#cursor {
+  animation: blink 0.7s infinite;
+}
+
+.connect {
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 20px;
+
+  background-color: #2f3651;
   
+}
+
+.social-icons {
+  margin: 0 auto;
+  text-align: center;
+  justify-content: center;
+}
+
+.icons {
+  margin: 10px;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .greet{
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+  }
+
   .typing-effect {
-    font-size: 24px;
+    font-size: 15px;
     font-family: monospace;
     position: relative;
     align-items: center;
     justify-content: center;
     text-align: center;
-    
-  }
-
-  .typing{
-    text-align: center;
-  }
-
-  p{
-    font-family: 'Fira Sans', sans-serif;
-    font-size: 20px;
-    color: #1144B3;
-    text-align: center;
+    margin: 0 auto;
   }
   
-  #cursor {
-    animation: blink 0.7s infinite;
-  }
-
-  .connect{
-    align-items: center;
-    justify-content: center;
-  }
-
-  .social-icons{
-
-    text-align: center;
-    justify-content: center;
-
-  }
-
-  .icons{
-    margin: 10px;
-  }
-  
-  @keyframes blink {
-    0%, 100% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
-  }
-  
+}
