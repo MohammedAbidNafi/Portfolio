@@ -88,8 +88,8 @@ p {
 
 .typing span::before {
   content: "";
-  height: 20px;
-  width: 1px;
+  height: 30px;
+  width: 2px;
   position: absolute;
   top: 50%;
   right: -7px;

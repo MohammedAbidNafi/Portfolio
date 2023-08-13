@@ -26,13 +26,13 @@ const dynamicTextRef = useRef<HTMLSpanElement | null>(null);
               } else if (isDeleting && charIndex > 0) {
                 // If condition is true, remove the previous character
                 charIndex--;
-                setTimeout(typeEffect, 10);
+                setTimeout(typeEffect, 100);
               } else {
                 // If word is deleted then switch to the next word
                 isDeleting = !isDeleting;
                 dynamicText!.classList.remove("stop-blinking");
                 wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
-                setTimeout(typeEffect, 50);
+                setTimeout(typeEffect, 1000);
               }
           }
           
